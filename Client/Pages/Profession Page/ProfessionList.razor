@@ -1,5 +1,44 @@
 ﻿@page "/professionlist"
+@inject HttpClient Http
+@inject NavigationManager navigationManager
+@using UserWebCRUD.Shared;
 
+<h2>Lista de Profesiones</h2>
+
+@if (professionList == null)
+{
+    <text>Cargando...</text>
+}
+else
+{
+    <div class="container mb-3 mt-3">
+        <table class="table table-striped table-bordered mydatatable" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Profesiones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var profession in professionList)
+                {
+                    <tr>
+                        <td>@profession.ProfessionName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
 @code {
+    ProfessionInfo[] professionList;
 
+    //protected override async Task OnInitializedAsync()
+    //{
+       // await LoadData();
+    //}
+
+    //async Task LoadData()
+    //{
+        //professionList = await Http.GetFromJsonAsync<ProfessionInfo[]>("api/ProfessionInfoes");
+    //}
 }

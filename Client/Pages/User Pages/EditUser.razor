@@ -3,17 +3,17 @@
 @inject NavigationManager navigationManager
 @using UserWebCRUD.Shared;
 
-<h3>Edit User</h3>
+<h3>Editar Usuario</h3>
 <form>
     <div class="row">
         <div class="col-md-8">
             <div class="form-group">
-                <label for="FirstName">First Name</label>
+                <label for="FirstName">Nombre</label>
                 <input form="FirstName" class="form-control" @bind="@user.FirstName" />
             </div>
             <br />
             <div class="form-group">
-                <label for="LastName">Last Name</label>
+                <label for="LastName">Apellido</label>
                 <input form="LastName" class="form-control" @bind="@user.LastName" />
             </div>
         </div>
@@ -21,8 +21,8 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <input type="button" class="btn btn-primary" @onclick="@(() => UpdateUser(user.UserId))" value="Save" />
-                <input type="button" class="btn" @onclick="@Cancel" value="Cancel" />
+                <input type="button" class="btn btn-primary" @onclick="@(() => UpdateUser(user.UserId))" value="Guardar" />
+                <input type="button" class="btn" @onclick="@Cancel" value="Cancelar" />
 
             </div>
         </div>

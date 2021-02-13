@@ -407,8 +407,6 @@ C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\UsuarioWebCRUD.Client.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\UsuarioWebCRUD.Client.RazorComponent.input.cache
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
@@ -420,8 +418,6 @@ C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\UsuarioWebCRUD.Client.TagHelpers.output.cache
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\UsuarioWebCRUD.Client.RazorCoreGenerate.cache
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\App.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
@@ -634,11 +630,13 @@ C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\UsuarioWebCRUD.Client.dll
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\ref\UsuarioWebCRUD.Client.dll
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\UsuarioWebCRUD.Client.pdb
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\UserList.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\UserList.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\AddUser.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\AddUser.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\DeleteUser.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\DeleteUser.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\EditUser.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\EditUser.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Profession Page\ProfessionList.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\User Pages\AddUser.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\User Pages\DeleteUser.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\User Pages\EditUser.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\User Pages\UserList.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\Profession Page\ProfessionList.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\User Pages\AddUser.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\User Pages\DeleteUser.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\User Pages\EditUser.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\User Pages\UserList.razor.g.cs

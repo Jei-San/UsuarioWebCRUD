@@ -98,7 +98,7 @@ using UserWebCRUD.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 31 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\AddUser.razor"
+#line 30 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\AddUser.razor"
        
     UserInfo user = new UserInfo();
     protected async Task CreateUsers()
