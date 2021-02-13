@@ -1,0 +1,12 @@
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\bin\Debug\net5.0\UsuarioWebCRUD.Shared.deps.json
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\bin\Debug\net5.0\UsuarioWebCRUD.Shared.dll
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\bin\Debug\net5.0\ref\UsuarioWebCRUD.Shared.dll
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\bin\Debug\net5.0\UsuarioWebCRUD.Shared.pdb
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\obj\Debug\net5.0\UsuarioWebCRUD.Shared.csprojAssemblyReference.cache
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\obj\Debug\net5.0\UsuarioWebCRUD.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\obj\Debug\net5.0\UsuarioWebCRUD.Shared.AssemblyInfoInputs.cache
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\obj\Debug\net5.0\UsuarioWebCRUD.Shared.AssemblyInfo.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\obj\Debug\net5.0\UsuarioWebCRUD.Shared.csproj.CoreCompileInputs.cache
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\obj\Debug\net5.0\UsuarioWebCRUD.Shared.dll
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\obj\Debug\net5.0\ref\UsuarioWebCRUD.Shared.dll
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Shared\obj\Debug\net5.0\UsuarioWebCRUD.Shared.pdb

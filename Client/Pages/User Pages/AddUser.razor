@@ -1,0 +1,42 @@
+﻿@page "/adduser"
+@inject HttpClient Http
+@inject NavigationManager navigationManager
+@using UserWebCRUD.Shared;
+
+<h3>Add User</h3>
+<form>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="FirstName">First Name</label>
+                <input form="FirstName" class="form-control" @bind="@user.FirstName"/>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="LastName">Last Name</label>
+                <input form="LastName" class="form-control" @bind="@user.LastName" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" @onclick="@CreateUsers" value="Save" />
+                <input type="button" class="btn" @onclick="@Cancel" value="Cancel" />
+
+            </div>
+        </div>
+    </div>
+</form>
+@code {
+    UserInfo user = new UserInfo();
+    protected async Task CreateUsers()
+    {
+        await Http.PostAsJsonAsync("api/UserInfoes", user);
+        navigationManager.NavigateTo("userlist");
+    }
+    void Cancel()
+    {
+        navigationManager.NavigateTo("userlist");
+    }
+}
