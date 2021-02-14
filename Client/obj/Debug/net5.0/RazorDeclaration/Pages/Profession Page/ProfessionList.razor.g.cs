@@ -102,15 +102,15 @@ using UserWebCRUD.Shared;
        
     ProfessionInfo[] professionList;
 
-    //protected override async Task OnInitializedAsync()
-    //{
-       // await LoadData();
-    //}
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
 
-    //async Task LoadData()
-    //{
-        //professionList = await Http.GetFromJsonAsync<ProfessionInfo[]>("api/ProfessionInfoes");
-    //}
+    async Task LoadData()
+    {
+        professionList = await Http.GetFromJsonAsync<ProfessionInfo[]>("api/ProfessionInfoes");
+    }
 
 #line default
 #line hidden

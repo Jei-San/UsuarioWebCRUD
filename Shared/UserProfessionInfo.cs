@@ -9,8 +9,8 @@ namespace UserWebCRUD.Shared
     public class UserProfessionInfo
     {
         [Key] public int UserProfessionId { get; set; }
-        public string UserId { get; set; }
-        public string ProfessionId { get; set; }
+        public int UserId { get; set; }
+        public int ProfessionId { get; set; }
         public virtual ProfessionInfo ProfessionsInfo { get; set; }
         public virtual UserInfo UsersInfo { get; set; }
     }

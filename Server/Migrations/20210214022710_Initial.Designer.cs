@@ -10,23 +10,23 @@ using UserWebCRUD.Server;
 namespace UsuarioWebCRUD.Server.Migrations
 {
     [DbContext(typeof(UserProfessionDbContext))]
-    [Migration("20210213221125_Initial")]
+    [Migration("20210214022710_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.3")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "5.0.3");
 
             modelBuilder.Entity("UserWebCRUD.Shared.ProfessionInfo", b =>
                 {
                     b.Property<int>("ProfessionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("ProfessionName")
                         .HasColumnType("nvarchar(max)");
@@ -41,7 +41,7 @@ namespace UsuarioWebCRUD.Server.Migrations
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
@@ -59,16 +59,16 @@ namespace UsuarioWebCRUD.Server.Migrations
                     b.Property<int>("UserProfessionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
-                    b.Property<string>("ProfessionId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ProfessionId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("ProfessionsInfoProfessionId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("UsersInfoUserId")
                         .HasColumnType("int");

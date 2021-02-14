@@ -98,7 +98,7 @@ using UserWebCRUD.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 42 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\UserList.razor"
+#line 43 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\UserList.razor"
        
     UserInfo[] usersList;
 

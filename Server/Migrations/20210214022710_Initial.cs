@@ -39,8 +39,8 @@ namespace UsuarioWebCRUD.Server.Migrations
                 {
                     UserProfessionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProfessionId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    ProfessionId = table.Column<int>(type: "int", nullable: false),
                     ProfessionsInfoProfessionId = table.Column<int>(type: "int", nullable: true),
                     UsersInfoUserId = table.Column<int>(type: "int", nullable: true)
                 },
