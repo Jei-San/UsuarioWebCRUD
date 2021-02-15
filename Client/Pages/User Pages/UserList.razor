@@ -31,9 +31,7 @@ else
                         <td>@user.FirstName</td>
                         <td>@user.LastName</td>
                         <td>
-                            <RadzenDropDown AllowClear="true" AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                                            @bind-Value=@multipleValues Multiple="true" Placeholder="Select..." Data=@data TextProperty="ProfessionName" ValueProperty="ProfessionName"  
-                                            Change=@(() => PostUserProfession()) Style="width:400px" />
+                            
                             <a class="btn btn-success" href="edituser/@user.UserId">Editar</a>
                             <a class="btn btn-danger" href="deleteuser/@user.UserId">Borrar</a>
                         </td>
@@ -47,12 +45,8 @@ else
     [Parameter]
     public string id { get; set; }
 
-    IEnumerable<string> multipleValues = new string[] { "ALFKI", "ANATR" };
-    string value = "ALFKI";
+    
     User[] usersList;
-    List<UserData> data = new List<UserData>();
-    Profession profession = new Profession();
-    UserProfession userProfession = new UserProfession();
 
     protected override async Task OnInitializedAsync()
     {
@@ -62,15 +56,5 @@ else
     async Task LoadData()
     {
         usersList = await Http.GetFromJsonAsync<User[]>("api/UserInfoes");
-    }
-
-    public async Task GetProfessions()
-    {
-        data = await Http.GetFromJsonAsync<List<UserData>>("api/ProfessionInfoes");
-        profession = data.First().Profession;
-    }
-    public async Task PostUserProfession()
-    {
-        await Http.PostAsJsonAsync("api/UserProfesionInfoes", userProfession);
     }
 }

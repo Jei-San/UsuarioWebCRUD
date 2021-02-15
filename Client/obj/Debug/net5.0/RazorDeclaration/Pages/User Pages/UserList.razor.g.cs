@@ -119,17 +119,13 @@ using UsuarioWebCRUD.Shared.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 46 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\UserList.razor"
+#line 44 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\UserList.razor"
        
     [Parameter]
     public string id { get; set; }
 
-    IEnumerable<string> multipleValues = new string[] { "ALFKI", "ANATR" };
-    string value = "ALFKI";
+    
     User[] usersList;
-    List<UserData> data = new List<UserData>();
-    Profession profession = new Profession();
-    UserProfession userProfession = new UserProfession();
 
     protected override async Task OnInitializedAsync()
     {
@@ -139,16 +135,6 @@ using UsuarioWebCRUD.Shared.Models;
     async Task LoadData()
     {
         usersList = await Http.GetFromJsonAsync<User[]>("api/UserInfoes");
-    }
-
-    public async Task GetProfessions()
-    {
-        data = await Http.GetFromJsonAsync<List<UserData>>("api/ProfessionInfoes");
-        profession = data.First().Profession;
-    }
-    public async Task PostUserProfession()
-    {
-        await Http.PostAsJsonAsync("api/UserProfesionInfoes", userProfession);
     }
 
 #line default

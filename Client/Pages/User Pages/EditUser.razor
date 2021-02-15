@@ -18,6 +18,9 @@
                 <input form="LastName" class="form-control" @bind="@user.LastName" />
             </div>
         </div>
+        <RadzenDropDown AllowClear="true" AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                        @bind-Value=@profession.ProfessionId Multiple="true" Placeholder="Select..." Data=@professions TextProperty="ProfessionName" ValueProperty="ProfessionName"
+                        Change=@PostUserProfession Style="width:400px" />
         <div class="container mb-3 mt-3">
             <table class="table table-striped table-bordered mydatatable" style="width:100%">
                 <thead>
@@ -28,10 +31,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                        @foreach (var row in data)
+                    @foreach (var row in data)
+                    {
+                        if (row.Profession != null)
                         {
-                            if (row.Profession != null)
-                            {
                             <tr>
                                 <td>@row.Profession.ProfessionId</td>
                                 <td>@row.Profession.ProfessionName</td>
@@ -40,13 +43,13 @@
                                     <input type="button" value="Borrar" @onclick="@(() => DeleteProfession(row.UserProfession.UserProfessionId))" class="btn btn-primary" />
                                 </td>
                             </tr>
-                            }
                         }
+                    }
                 </tbody>
             </table>
         </div>
 
-        
+
     </div>
     <div class="row">
         <div class="col-md-4">
@@ -63,17 +66,23 @@
     public string id { get; set; }
 
     List<UserData> data = new List<UserData>();
-
     User user = new User();
+    Profession profession = new Profession();
+    IEnumerable<Profession> professions;
+    IEnumerable<string> multipleValues = new string[] { "ALFKI", "ANATR" };
+    UserProfession userProfession = new UserProfession();
+
 
     protected override async Task OnInitializedAsync()
     {
         data = await Http.GetFromJsonAsync <List<UserData>>($"api/UserInfoes/{id}");
         user = data.First().User;
+
+        professions = await Http.GetFromJsonAsync<IEnumerable<Profession>>("api/ProfessionInfoes");
     }
 
     protected async Task DeleteProfession(int id)
-    { 
+    {
         await Http.DeleteAsync($"api/UserProfessionInfoes/{id}");
         navigationManager.NavigateTo("userlist");
     }
@@ -83,6 +92,12 @@
         await Http.PutAsJsonAsync($"api/UserInfoes/{id}", user);
         navigationManager.NavigateTo("userlist");
     }
+
+    public async Task PostUserProfession()
+    {
+        await Http.PostAsJsonAsync("api/UserProfesionInfoes", userProfession);
+    }
+
     void Cancel()
     {
         navigationManager.NavigateTo("userlist");
