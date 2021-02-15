@@ -184,3 +184,5 @@ C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Server\bin\Debug\net5.
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Server\bin\Debug\net5.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Server\bin\Debug\net5.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Server\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Server\bin\Debug\net5.0\Radzen.Blazor.dll
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Server\bin\Debug\net5.0\System.Linq.Dynamic.Core.dll

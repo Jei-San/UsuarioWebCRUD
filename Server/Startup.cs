@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
-using UserWebCRUD.Server;
+using UsuarioWebCRUD.Server.Dal;
 
 namespace UsuarioWebCRUD.Server
 {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "u/sGULUKetCWkuULhvmK77yt95W0g7aR7sNXbl2Xoc+woxi2ntkPsArMjpz6CWQUIh74/GxAm56h2+lIf75dlA==",
+  "dgSpecHash": "9qXbNY5LDutp9Y2lYJGm452UzTRVMFoMdZF7iKBRGLe13DRr2la04ctRFvVjvxI6Lnser11+beqXCyyNVEJ/Gw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jason\\source\\repos\\UsuarioWebCRUD\\UsuarioWebCRUD\\Server\\UsuarioWebCRUD.Server.csproj",
   "expectedPackageFiles": [
@@ -76,6 +76,7 @@
     "C:\\Users\\jason\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\jason\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\jason\\.nuget\\packages\\radzen.blazor\\3.0.9\\radzen.blazor.3.0.9.nupkg.sha512",
     "C:\\Users\\jason\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\jason\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\jason\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
@@ -110,6 +111,7 @@
     "C:\\Users\\jason\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\jason\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\jason\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
+    "C:\\Users\\jason\\.nuget\\packages\\system.linq.dynamic.core\\1.2.2\\system.linq.dynamic.core.1.2.2.nupkg.sha512",
     "C:\\Users\\jason\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\jason\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\jason\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",

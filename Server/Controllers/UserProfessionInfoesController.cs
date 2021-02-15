@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using UserWebCRUD.Server;
-using UserWebCRUD.Shared;
+using UsuarioWebCRUD.Server.Dal;
+using UsuarioWebCRUD.Shared;
 
 namespace UsuarioWebCRUD.Server.Controllers
 {
@@ -23,16 +23,16 @@ namespace UsuarioWebCRUD.Server.Controllers
 
         // GET: api/UserProfessionInfoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserProfessionInfo>>> GetUserProfessionsInfo()
+        public async Task<ActionResult<IEnumerable<UserProfession>>> GetUserProfessionsInfo()
         {
-            return await _context.UserProfessionsInfo.ToListAsync();
+            return await _context.UserProfessions.ToListAsync();
         }
 
         // GET: api/UserProfessionInfoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserProfessionInfo>> GetUserProfessionInfo(int id)
+        public async Task<ActionResult<UserProfession>> GetUserProfessionInfo(int id)
         {
-            var userProfessionInfo = await _context.UserProfessionsInfo.FindAsync(id);
+            var userProfessionInfo = await _context.UserProfessions.FindAsync(id);
 
             if (userProfessionInfo == null)
             {
@@ -42,43 +42,13 @@ namespace UsuarioWebCRUD.Server.Controllers
             return userProfessionInfo;
         }
 
-        // PUT: api/UserProfessionInfoes/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserProfessionInfo(int id, UserProfessionInfo userProfessionInfo)
-        {
-            if (id != userProfessionInfo.UserProfessionId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(userProfessionInfo).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserProfessionInfoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
 
         // POST: api/UserProfessionInfoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<UserProfessionInfo>> PostUserProfessionInfo(UserProfessionInfo userProfessionInfo)
+        public async Task<ActionResult<UserProfession>> PostUserProfessionInfo(UserProfession userProfessionInfo)
         {
-            _context.UserProfessionsInfo.Add(userProfessionInfo);
+            _context.UserProfessions.Add(userProfessionInfo);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUserProfessionInfo", new { id = userProfessionInfo.UserProfessionId }, userProfessionInfo);
@@ -88,21 +58,16 @@ namespace UsuarioWebCRUD.Server.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserProfessionInfo(int id)
         {
-            var userProfessionInfo = await _context.UserProfessionsInfo.FindAsync(id);
+            var userProfessionInfo = await _context.UserProfessions.FindAsync(id);
             if (userProfessionInfo == null)
             {
                 return NotFound();
             }
 
-            _context.UserProfessionsInfo.Remove(userProfessionInfo);
+            _context.UserProfessions.Remove(userProfessionInfo);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
-
-        private bool UserProfessionInfoExists(int id)
-        {
-            return _context.UserProfessionsInfo.Any(e => e.UserProfessionId == id);
-        }
     }
-}
+} 

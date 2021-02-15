@@ -83,8 +83,29 @@ using UsuarioWebCRUD.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 12 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\_Imports.razor"
+using Radzen;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\_Imports.razor"
+using Radzen.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 4 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\DeleteUser.razor"
-using UserWebCRUD.Shared;
+using UsuarioWebCRUD.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\DeleteUser.razor"
+using UsuarioWebCRUD.Shared.Models;
 
 #line default
 #line hidden
@@ -98,16 +119,19 @@ using UserWebCRUD.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\DeleteUser.razor"
+#line 27 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\DeleteUser.razor"
        
     [Parameter]
     public string id { get; set; }
 
-    UserInfo user = new UserInfo();
+    List<UserData> data = new List<UserData>();
+
+    User user = new User();
 
     protected override async Task OnInitializedAsync()
     {
-        user = await Http.GetFromJsonAsync<UserInfo>($"api/UserInfoes/{id}");
+        data = await Http.GetFromJsonAsync<List<UserData>>($"api/UserInfoes/{id}");
+        user = data.First().User;
     }
 
     protected async Task DeleteeUser(int id)

@@ -1,7 +1,8 @@
 ﻿@page "/deleteuser/{id}"
 @inject HttpClient Http
 @inject NavigationManager navigationManager
-@using UserWebCRUD.Shared;
+@using UsuarioWebCRUD.Shared;
+@using UsuarioWebCRUD.Shared.Models;
 
 <h2>Borrar Usuario</h2>
 
@@ -27,11 +28,14 @@
     [Parameter]
     public string id { get; set; }
 
-    UserInfo user = new UserInfo();
+    List<UserData> data = new List<UserData>();
+
+    User user = new User();
 
     protected override async Task OnInitializedAsync()
     {
-        user = await Http.GetFromJsonAsync<UserInfo>($"api/UserInfoes/{id}");
+        data = await Http.GetFromJsonAsync<List<UserData>>($"api/UserInfoes/{id}");
+        user = data.First().User;
     }
 
     protected async Task DeleteeUser(int id)

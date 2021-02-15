@@ -630,13 +630,17 @@ C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\UsuarioWebCRUD.Client.dll
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\ref\UsuarioWebCRUD.Client.dll
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\UsuarioWebCRUD.Client.pdb
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Profession Page\ProfessionList.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\User Pages\AddUser.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\User Pages\DeleteUser.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\User Pages\EditUser.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\RazorDeclaration\Pages\User Pages\UserList.razor.g.cs
-C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\Profession Page\ProfessionList.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\User Pages\AddUser.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\User Pages\DeleteUser.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\User Pages\EditUser.razor.g.cs
 C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\Razor\Pages\User Pages\UserList.razor.g.cs
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\bin\Debug\net5.0\wwwroot\_framework\Radzen.Blazor.dll.gz
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\bin\Debug\net5.0\wwwroot\_framework\System.Linq.Dynamic.Core.dll.gz
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\bin\Debug\net5.0\wwwroot\_framework\Radzen.Blazor.dll
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\bin\Debug\net5.0\wwwroot\_framework\System.Linq.Dynamic.Core.dll
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\build-gz\45K7Va2t.gz
+C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\obj\Debug\net5.0\build-gz\NwJQV6FE.gz

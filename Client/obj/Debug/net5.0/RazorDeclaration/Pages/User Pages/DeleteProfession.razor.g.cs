@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace UsuarioWebCRUD.Client.Pages.Profession_Page
+namespace UsuarioWebCRUD.Client.Pages.User_Pages
 {
     #line hidden
     using System;
@@ -83,40 +83,33 @@ using UsuarioWebCRUD.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\Profession Page\ProfessionList.razor"
-using UserWebCRUD.Shared;
+#line 11 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\_Imports.razor"
+using UsuarioWebCRUD.Shared;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/professionlist")]
-    public partial class ProfessionList : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 12 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\_Imports.razor"
+using Radzen;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\_Imports.razor"
+using Radzen.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class DeleteProfession : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 32 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\Profession Page\ProfessionList.razor"
-       
-    ProfessionInfo[] professionList;
-
-    protected override async Task OnInitializedAsync()
-    {
-        await LoadData();
-    }
-
-    async Task LoadData()
-    {
-        professionList = await Http.GetFromJsonAsync<ProfessionInfo[]>("api/ProfessionInfoes");
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navigationManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

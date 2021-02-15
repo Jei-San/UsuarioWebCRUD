@@ -2,12 +2,12 @@
 
 namespace UsuarioWebCRUD.Server.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Initials : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ProfessionsInfo",
+                name: "Professions",
                 columns: table => new
                 {
                     ProfessionId = table.Column<int>(type: "int", nullable: false)
@@ -16,11 +16,11 @@ namespace UsuarioWebCRUD.Server.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProfessionsInfo", x => x.ProfessionId);
+                    table.PrimaryKey("PK_Professions", x => x.ProfessionId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UsersInfo",
+                name: "Users",
                 columns: table => new
                 {
                     UserId = table.Column<int>(type: "int", nullable: false)
@@ -30,58 +30,56 @@ namespace UsuarioWebCRUD.Server.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UsersInfo", x => x.UserId);
+                    table.PrimaryKey("PK_Users", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserProfessionsInfo",
+                name: "UserProfessions",
                 columns: table => new
                 {
                     UserProfessionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    ProfessionId = table.Column<int>(type: "int", nullable: false),
-                    ProfessionsInfoProfessionId = table.Column<int>(type: "int", nullable: true),
-                    UsersInfoUserId = table.Column<int>(type: "int", nullable: true)
+                    ProfessionId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserProfessionsInfo", x => x.UserProfessionId);
+                    table.PrimaryKey("PK_UserProfessions", x => x.UserProfessionId);
                     table.ForeignKey(
-                        name: "FK_UserProfessionsInfo_ProfessionsInfo_ProfessionsInfoProfessionId",
-                        column: x => x.ProfessionsInfoProfessionId,
-                        principalTable: "ProfessionsInfo",
+                        name: "FK_UserProfessions_Professions_ProfessionId",
+                        column: x => x.ProfessionId,
+                        principalTable: "Professions",
                         principalColumn: "ProfessionId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserProfessionsInfo_UsersInfo_UsersInfoUserId",
-                        column: x => x.UsersInfoUserId,
-                        principalTable: "UsersInfo",
+                        name: "FK_UserProfessions_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
                         principalColumn: "UserId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfessionsInfo_ProfessionsInfoProfessionId",
-                table: "UserProfessionsInfo",
-                column: "ProfessionsInfoProfessionId");
+                name: "IX_UserProfessions_ProfessionId",
+                table: "UserProfessions",
+                column: "ProfessionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfessionsInfo_UsersInfoUserId",
-                table: "UserProfessionsInfo",
-                column: "UsersInfoUserId");
+                name: "IX_UserProfessions_UserId",
+                table: "UserProfessions",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "UserProfessionsInfo");
+                name: "UserProfessions");
 
             migrationBuilder.DropTable(
-                name: "ProfessionsInfo");
+                name: "Professions");
 
             migrationBuilder.DropTable(
-                name: "UsersInfo");
+                name: "Users");
         }
     }
 }

@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace UserWebCRUD.Shared
+namespace UsuarioWebCRUD.Shared
 {
-    public class UserProfessionInfo
+    public class UserProfession
     {
         [Key] public int UserProfessionId { get; set; }
         public int UserId { get; set; }
+        public virtual User User { get; set; }
         public int ProfessionId { get; set; }
-        public virtual ProfessionInfo ProfessionsInfo { get; set; }
-        public virtual UserInfo UsersInfo { get; set; }
+        public virtual Profession Profession { get; set; }
     }
 }

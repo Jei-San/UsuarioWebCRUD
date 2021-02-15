@@ -1,7 +1,7 @@
 ﻿@page "/adduser"
 @inject HttpClient Http
 @inject NavigationManager navigationManager
-@using UserWebCRUD.Shared;
+@using UsuarioWebCRUD.Shared;
 
 <h3>Agregar Usuario</h3>
 <form>
@@ -28,7 +28,7 @@
     </div>
 </form>
 @code {
-    UserInfo user = new UserInfo();
+    User user = new User();
     protected async Task CreateUsers()
     {
         await Http.PostAsJsonAsync("api/UserInfoes", user);

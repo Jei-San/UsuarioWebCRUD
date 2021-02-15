@@ -1,7 +1,8 @@
 ﻿@page "/edituser/{id}"
 @inject HttpClient Http
 @inject NavigationManager navigationManager
-@using UserWebCRUD.Shared;
+@using UsuarioWebCRUD.Shared;
+@using UsuarioWebCRUD.Shared.Models;
 
 <h3>Editar Usuario</h3>
 <form>
@@ -17,6 +18,35 @@
                 <input form="LastName" class="form-control" @bind="@user.LastName" />
             </div>
         </div>
+        <div class="container mb-3 mt-3">
+            <table class="table table-striped table-bordered mydatatable" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ProfessionId</th>
+                        <th>Profession</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                        @foreach (var row in data)
+                        {
+                            if (row.Profession != null)
+                            {
+                            <tr>
+                                <td>@row.Profession.ProfessionId</td>
+                                <td>@row.Profession.ProfessionName</td>
+                                <td>
+
+                                    <input type="button" value="Borrar" @onclick="@(() => DeleteProfession(row.UserProfession.UserProfessionId))" class="btn btn-primary" />
+                                </td>
+                            </tr>
+                            }
+                        }
+                </tbody>
+            </table>
+        </div>
+
+        
     </div>
     <div class="row">
         <div class="col-md-4">
@@ -32,11 +62,20 @@
     [Parameter]
     public string id { get; set; }
 
-    UserInfo user = new UserInfo();
+    List<UserData> data = new List<UserData>();
+
+    User user = new User();
 
     protected override async Task OnInitializedAsync()
     {
-        user = await Http.GetFromJsonAsync<UserInfo>($"api/UserInfoes/{id}");
+        data = await Http.GetFromJsonAsync <List<UserData>>($"api/UserInfoes/{id}");
+        user = data.First().User;
+    }
+
+    protected async Task DeleteProfession(int id)
+    { 
+        await Http.DeleteAsync($"api/UserProfessionInfoes/{id}");
+        navigationManager.NavigateTo("userlist");
     }
 
     protected async Task UpdateUser(int id)

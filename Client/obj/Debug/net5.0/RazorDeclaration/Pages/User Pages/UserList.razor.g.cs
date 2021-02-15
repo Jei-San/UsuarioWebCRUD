@@ -83,8 +83,29 @@ using UsuarioWebCRUD.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 12 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\_Imports.razor"
+using Radzen;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\_Imports.razor"
+using Radzen.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 4 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\UserList.razor"
-using UserWebCRUD.Shared;
+using UsuarioWebCRUD.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\UserList.razor"
+using UsuarioWebCRUD.Shared.Models;
 
 #line default
 #line hidden
@@ -98,9 +119,17 @@ using UserWebCRUD.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\UserList.razor"
+#line 46 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\UserList.razor"
        
-    UserInfo[] usersList;
+    [Parameter]
+    public string id { get; set; }
+
+    IEnumerable<string> multipleValues = new string[] { "ALFKI", "ANATR" };
+    string value = "ALFKI";
+    User[] usersList;
+    List<UserData> data = new List<UserData>();
+    Profession profession = new Profession();
+    UserProfession userProfession = new UserProfession();
 
     protected override async Task OnInitializedAsync()
     {
@@ -109,7 +138,17 @@ using UserWebCRUD.Shared;
 
     async Task LoadData()
     {
-        usersList = await Http.GetFromJsonAsync<UserInfo[]>("api/UserInfoes");
+        usersList = await Http.GetFromJsonAsync<User[]>("api/UserInfoes");
+    }
+
+    public async Task GetProfessions()
+    {
+        data = await Http.GetFromJsonAsync<List<UserData>>("api/ProfessionInfoes");
+        profession = data.First().Profession;
+    }
+    public async Task PostUserProfession()
+    {
+        await Http.PostAsJsonAsync("api/UserProfesionInfoes", userProfession);
     }
 
 #line default

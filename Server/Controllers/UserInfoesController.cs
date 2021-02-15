@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using UserWebCRUD.Server;
-using UserWebCRUD.Shared;
+using UsuarioWebCRUD.Server.Dal;
+using UsuarioWebCRUD.Shared;
+using UsuarioWebCRUD.Shared.Models;
 
 namespace UsuarioWebCRUD.Server.Controllers
 {
@@ -23,29 +24,50 @@ namespace UsuarioWebCRUD.Server.Controllers
 
         // GET: api/UserInfoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserInfo>>> GetUsersInfo()
+        public async Task<ActionResult<IEnumerable<User>>> GetUsersInfo()
         {
-            return await _context.UsersInfo.ToListAsync();
+            return await _context.Users.ToListAsync();
         }
 
         // GET: api/UserInfoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserInfo>> GetUserInfo(int id)
+        public async Task<ActionResult<List<UserData>>> GetUserInfo(int id)
         {
-            var userInfo = await _context.UsersInfo.FindAsync(id);
+            List<UserData> userInfo = new List<UserData>();
+            userInfo = await _context.Users
+                .Join(_context.UserProfessions, 
+                    u => u.UserId, 
+                    up => up.UserId, 
+                    (u, up) => 
+                    new UserData { 
+                        User = u, 
+                        UserProfession = up 
+                    } 
+                )
+                .Join(_context.Professions,
+                        u => u.UserProfession.ProfessionId, 
+                        p => p.ProfessionId,
+                        (u, p) => 
+                        new UserData { 
+                            User = u.User, 
+                            UserProfession = u.UserProfession, 
+                            Profession = p 
+                        }
+                )
+                .ToListAsync<UserData>();
 
-            if (userInfo == null)
+            if (userInfo.Count < 1)
             {
-                return NotFound();
+                var user = await _context.Users.FindAsync(id);
+                userInfo.Add(new UserData { User = user });
             }
-
             return userInfo;
         }
 
         // PUT: api/UserInfoes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserInfo(int id, UserInfo userInfo)
+        public async Task<IActionResult> PutUserInfo(int id, User userInfo)
         {
             if (id != userInfo.UserId)
             {
@@ -76,9 +98,9 @@ namespace UsuarioWebCRUD.Server.Controllers
         // POST: api/UserInfoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<UserInfo>> PostUserInfo(UserInfo userInfo)
+        public async Task<ActionResult<User>> PostUserInfo(User userInfo)
         {
-            _context.UsersInfo.Add(userInfo);
+            _context.Users.Add(userInfo);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUserInfo", new { id = userInfo.UserId }, userInfo);
@@ -88,13 +110,13 @@ namespace UsuarioWebCRUD.Server.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserInfo(int id)
         {
-            var userInfo = await _context.UsersInfo.FindAsync(id);
+            var userInfo = await _context.Users.FindAsync(id);
             if (userInfo == null)
             {
                 return NotFound();
             }
 
-            _context.UsersInfo.Remove(userInfo);
+            _context.Users.Remove(userInfo);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +124,7 @@ namespace UsuarioWebCRUD.Server.Controllers
 
         private bool UserInfoExists(int id)
         {
-            return _context.UsersInfo.Any(e => e.UserId == id);
+            return _context.Users.Any(e => e.UserId == id);
         }
     }
 }

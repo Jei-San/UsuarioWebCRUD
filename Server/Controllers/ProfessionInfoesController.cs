@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using UserWebCRUD.Server;
-using UserWebCRUD.Shared;
+using UsuarioWebCRUD.Server.Dal;
+using UsuarioWebCRUD.Shared;
 
 namespace UsuarioWebCRUD.Server.Controllers
 {
@@ -23,16 +23,16 @@ namespace UsuarioWebCRUD.Server.Controllers
 
         // GET: api/ProfessionInfoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProfessionInfo>>> GetProfessionsInfo()
+        public async Task<ActionResult<IEnumerable<Profession>>> GetProfessionsInfo()
         {
-            return await _context.ProfessionsInfo.ToListAsync();
+            return await _context.Professions.ToListAsync();
         }
 
         // GET: api/ProfessionInfoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProfessionInfo>> GetProfessionInfo(int id)
+        public async Task<ActionResult<Profession>> GetProfessionInfo(int id)
         {
-            var professionInfo = await _context.ProfessionsInfo.FindAsync(id);
+            var professionInfo = await _context.Professions.FindAsync(id);
 
             if (professionInfo == null)
             {
@@ -45,7 +45,7 @@ namespace UsuarioWebCRUD.Server.Controllers
         // PUT: api/ProfessionInfoes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProfessionInfo(int id, ProfessionInfo professionInfo)
+        public async Task<IActionResult> PutProfessionInfo(int id, Profession professionInfo)
         {
             if (id != professionInfo.ProfessionId)
             {
@@ -76,9 +76,9 @@ namespace UsuarioWebCRUD.Server.Controllers
         // POST: api/ProfessionInfoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<ProfessionInfo>> PostProfessionInfo(ProfessionInfo professionInfo)
+        public async Task<ActionResult<Profession>> PostProfessionInfo(Profession professionInfo)
         {
-            _context.ProfessionsInfo.Add(professionInfo);
+            _context.Professions.Add(professionInfo);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetProfessionInfo", new { id = professionInfo.ProfessionId }, professionInfo);
@@ -88,13 +88,13 @@ namespace UsuarioWebCRUD.Server.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProfessionInfo(int id)
         {
-            var professionInfo = await _context.ProfessionsInfo.FindAsync(id);
+            var professionInfo = await _context.Professions.FindAsync(id);
             if (professionInfo == null)
             {
                 return NotFound();
             }
 
-            _context.ProfessionsInfo.Remove(professionInfo);
+            _context.Professions.Remove(professionInfo);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +102,7 @@ namespace UsuarioWebCRUD.Server.Controllers
 
         private bool ProfessionInfoExists(int id)
         {
-            return _context.ProfessionsInfo.Any(e => e.ProfessionId == id);
+            return _context.Professions.Any(e => e.ProfessionId == id);
         }
     }
 }

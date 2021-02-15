@@ -83,8 +83,22 @@ using UsuarioWebCRUD.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 12 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\_Imports.razor"
+using Radzen;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\_Imports.razor"
+using Radzen.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 4 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\AddUser.razor"
-using UserWebCRUD.Shared;
+using UsuarioWebCRUD.Shared;
 
 #line default
 #line hidden
@@ -100,7 +114,7 @@ using UserWebCRUD.Shared;
 #nullable restore
 #line 30 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\AddUser.razor"
        
-    UserInfo user = new UserInfo();
+    User user = new User();
     protected async Task CreateUsers()
     {
         await Http.PostAsJsonAsync("api/UserInfoes", user);

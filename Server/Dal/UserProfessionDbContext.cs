@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using UserWebCRUD.Shared;
+using UsuarioWebCRUD.Shared;
 
-namespace UserWebCRUD.Server
+namespace UsuarioWebCRUD.Server.Dal
 {
     public class UserProfessionDbContext : DbContext
     {
@@ -14,8 +14,8 @@ namespace UserWebCRUD.Server
         {
 
         }
-        public DbSet<UserInfo> UsersInfo { get; set; }
-        public DbSet<ProfessionInfo> ProfessionsInfo { get; set; }
-        public DbSet<UserProfessionInfo> UserProfessionsInfo { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Profession> Professions { get; set; }
+        public DbSet<UserProfession> UserProfessions { get; set; }
     }
 }
