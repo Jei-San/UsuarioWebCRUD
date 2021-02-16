@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UsuarioWebCRUD.Server.Dal;
 using UsuarioWebCRUD.Shared;
+using UsuarioWebCRUD.Shared.Models;
 
 namespace UsuarioWebCRUD.Server.Controllers
 {
@@ -46,8 +47,9 @@ namespace UsuarioWebCRUD.Server.Controllers
         // POST: api/UserProfessionInfoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<UserProfession>> PostUserProfessionInfo(UserProfession userProfessionInfo)
+        public async Task<ActionResult<UserProfession>> PostUserProfessionInfo(ProfessionUserRequest profession)
         {
+            var userProfessionInfo = new UserProfession { UserId = profession.UserId, ProfessionId = profession.ProfessionId };
             _context.UserProfessions.Add(userProfessionInfo);
             await _context.SaveChangesAsync();
 

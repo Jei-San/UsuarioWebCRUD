@@ -18,9 +18,19 @@
                 <input form="LastName" class="form-control" @bind="@user.LastName" />
             </div>
         </div>
-        <RadzenDropDown AllowClear="true" AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                        @bind-Value=@profession.ProfessionId Multiple="true" Placeholder="Select..." Data=@professions TextProperty="ProfessionName" ValueProperty="ProfessionName"
-                        Change=@PostUserProfession Style="width:400px" />
+        <div class="form-group">
+            <select class="from-control" @bind="@selectedProfessionId">
+                <option value="">Selecciona una Profesion</option>
+                @foreach (var p in professions)
+                {
+                    if (p.ProfessionName != null)
+                    {
+                        <option value="@p.ProfessionId">@p.ProfessionName</option>
+                    }
+                }
+            </select>
+            <input type="button" value="Agregar Profesion" @onclick="(() => AddUserProfession())" class="btn btn-primary" />
+        </div>
         <div class="container mb-3 mt-3">
             <table class="table table-striped table-bordered mydatatable" style="width:100%">
                 <thead>
@@ -64,21 +74,19 @@
 @code {
     [Parameter]
     public string id { get; set; }
-
+    public Profession profession { get; set; }
     List<UserData> data = new List<UserData>();
     User user = new User();
-    Profession profession = new Profession();
-    IEnumerable<Profession> professions;
-    IEnumerable<string> multipleValues = new string[] { "ALFKI", "ANATR" };
-    UserProfession userProfession = new UserProfession();
-
+    public string selectedProfessionId { get; set; }
+    List<Profession> professions = new List<Profession>();
+    ProfessionUserRequest professionUser = new ProfessionUserRequest();
 
     protected override async Task OnInitializedAsync()
     {
         data = await Http.GetFromJsonAsync <List<UserData>>($"api/UserInfoes/{id}");
         user = data.First().User;
+        professions = await Http.GetFromJsonAsync<List<Profession>>("api/ProfessionInfoes");
 
-        professions = await Http.GetFromJsonAsync<IEnumerable<Profession>>("api/ProfessionInfoes");
     }
 
     protected async Task DeleteProfession(int id)
@@ -93,9 +101,14 @@
         navigationManager.NavigateTo("userlist");
     }
 
-    public async Task PostUserProfession()
+    protected async Task AddUserProfession()
     {
-        await Http.PostAsJsonAsync("api/UserProfesionInfoes", userProfession);
+        if(selectedProfessionId != null && selectedProfessionId != "")
+        {
+
+            await Http.PostAsJsonAsync("api/UserProfessionInfoes", new ProfessionUserRequest { UserId = int.Parse(id), ProfessionId = int.Parse(selectedProfessionId) });
+            navigationManager.NavigateTo("userlist");
+        }
     }
 
     void Cancel()

@@ -119,25 +119,23 @@ using UsuarioWebCRUD.Shared.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 64 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\EditUser.razor"
+#line 74 "C:\Users\jason\source\repos\UsuarioWebCRUD\UsuarioWebCRUD\Client\Pages\User Pages\EditUser.razor"
        
     [Parameter]
     public string id { get; set; }
-
+    public Profession profession { get; set; }
     List<UserData> data = new List<UserData>();
     User user = new User();
-    Profession profession = new Profession();
-    IEnumerable<Profession> professions;
-    IEnumerable<string> multipleValues = new string[] { "ALFKI", "ANATR" };
-    UserProfession userProfession = new UserProfession();
-
+    public string selectedProfessionId { get; set; }
+    List<Profession> professions = new List<Profession>();
+    ProfessionUserRequest professionUser = new ProfessionUserRequest();
 
     protected override async Task OnInitializedAsync()
     {
         data = await Http.GetFromJsonAsync <List<UserData>>($"api/UserInfoes/{id}");
         user = data.First().User;
+        professions = await Http.GetFromJsonAsync<List<Profession>>("api/ProfessionInfoes");
 
-        professions = await Http.GetFromJsonAsync<IEnumerable<Profession>>("api/ProfessionInfoes");
     }
 
     protected async Task DeleteProfession(int id)
@@ -152,9 +150,14 @@ using UsuarioWebCRUD.Shared.Models;
         navigationManager.NavigateTo("userlist");
     }
 
-    public async Task PostUserProfession()
+    protected async Task AddUserProfession()
     {
-        await Http.PostAsJsonAsync("api/UserProfesionInfoes", userProfession);
+        if(selectedProfessionId != null && selectedProfessionId != "")
+        {
+
+            await Http.PostAsJsonAsync("api/UserProfessionInfoes", new ProfessionUserRequest { UserId = int.Parse(id), ProfessionId = int.Parse(selectedProfessionId) });
+            navigationManager.NavigateTo("userlist");
+        }
     }
 
     void Cancel()
